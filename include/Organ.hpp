@@ -12,6 +12,7 @@ public:
     Organ();
     ~Organ();
     Doku* kokDoku;
+    Organ* sonraki;
 };
 
 

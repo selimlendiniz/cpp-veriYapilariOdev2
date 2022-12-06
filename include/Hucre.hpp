@@ -5,7 +5,8 @@ class Hucre
 {
 public:
     Hucre(int veri);
-    Hucre();    
+    Hucre();
+    Hucre* sonraki;
     int dnaSayisi;
 };
 

@@ -10,7 +10,7 @@ public:
     Doku* sag;
     Doku* sol;
     Doku* sonraki;
-    Doku* ortanca;
+    Hucre* ortanca;
     Hucre* ilkHucre;
     int hucreSayisi;
 

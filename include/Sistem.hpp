@@ -7,7 +7,7 @@
 class Sistem
 {
 public:
-    Sistem(/* args */);
+    Sistem();
     ~Sistem();
     Organ* ilkOrgan;
     Sistem* sonrakiSistem;

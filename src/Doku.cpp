@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "Doku.hpp"
+#include "../include/Radix.hpp"
 
 Doku::Doku(){
     hucreSayisi = 0;
@@ -46,6 +47,45 @@ Hucre* Doku::sonHucreGetir(){
 
 
 void Doku::ortancaGuncelle(){
+
+    int* sayilar = new int[hucreSayisi];
+
+    Hucre* gec = ilkHucre;
+
+
+    for (int i = 0; i < hucreSayisi; i++)
+    {
+        sayilar[i] = gec->dnaSayisi;
+        gec = gec->sonraki;
+    }
+
+    Radix *radix = new Radix(sayilar,hucreSayisi);
+    int *siraliSayilar = radix->sirala();
+
+
+    gec = ilkHucre;
+
+    for (int i = 0; i < hucreSayisi; i++)
+    {
+        gec->dnaSayisi = siraliSayilar[i];
+        gec = gec->sonraki;
+    }
+
+    gec = ilkHucre;
+
+    for (int i = 0; i < ((hucreSayisi-1) / 2) + 1 ; i++)
+    {
+        gec = gec->sonraki;
+    }
+
+    ortanca = gec;
+
+
+    delete radix;
+    delete[] sayilar;
+    delete[] siraliSayilar;
+    
+    
     
 
 

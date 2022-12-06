@@ -13,6 +13,7 @@ public:
     Hucre* ortanca;
     Hucre* ilkHucre;
     int hucreSayisi;
+    int yukseklik;
 
     Doku();
     void hucreEkle(int veri);

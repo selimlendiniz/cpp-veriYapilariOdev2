@@ -1,4 +1,4 @@
-#include "../include/Radix.hpp"
+#include "Radix.hpp"
 #include<iomanip>
 Radix::Radix(int* sayilar,int adet)
 {

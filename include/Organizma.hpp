@@ -10,7 +10,10 @@ private:
 public:
     Organizma(/* args */);
     ~Organizma();
+    void sistemEkle();
+    Sistem* sonSistemGetir();
     Sistem* ilkSistem;
+    int sistemSayisi;
 };
 
 

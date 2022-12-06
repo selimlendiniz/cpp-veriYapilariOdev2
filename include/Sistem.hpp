@@ -9,8 +9,11 @@ class Sistem
 public:
     Sistem();
     ~Sistem();
+    void organEkle();
+    Organ* sonOrganGetir();
     Organ* ilkOrgan;
     Sistem* sonrakiSistem;
+    int organSayisi;
 };
 
 

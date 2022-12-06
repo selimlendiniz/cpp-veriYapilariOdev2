@@ -11,8 +11,11 @@ class Organ
 public:
     Organ();
     ~Organ();
-    Doku* kokDoku;
+    void dokuEkle();
+    Doku* sonDokuGetir();
+    Doku* ilkDoku;
     Organ* sonraki;
+    int dokuSayisi;
 };
 
 

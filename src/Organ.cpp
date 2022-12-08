@@ -1,4 +1,5 @@
 #include "../include/Organ.hpp"
+#include "../include/IkiliAramaAgaci.hpp"
 
 
 Organ::Organ(){
@@ -37,5 +38,20 @@ Doku* Organ::sonDokuGetir(){
 
 
     return gec;
+
+}
+
+void Organ::agacOlustur()
+{
+    Doku* gec = ilkDoku;
+    IkiliAramaAgaci* agac = new IkiliAramaAgaci();
+
+    while (gec != 0)
+    {
+        agac->ekle(gec);
+        gec = gec->sonraki;
+    }
+    
+
 
 }

@@ -12,6 +12,7 @@ public:
     Organ();
     ~Organ();
     void dokuEkle(Doku* yeniDoku);
+    void agacOlustur();
     Doku* sonDokuGetir();
     Doku* ilkDoku;
     Organ* sonraki;

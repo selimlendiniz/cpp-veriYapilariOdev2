@@ -49,7 +49,9 @@ int main()
             // 100 organ oldugunda (yani 2000 doku olduğunda) sistem oluşur
             if (dokuSayac % 20 == 0)
             {
+                organ->agacOlustur();
                 sistem->organEkle(organ);
+                
                 
                 
             }
@@ -58,6 +60,7 @@ int main()
             {
                 organizma->sistemEkle(sistem);
                 sistem = new Sistem();
+                sistemSayac++;
             }
             
 

@@ -7,9 +7,9 @@ Organizma::Organizma()
     sistemSayisi = 0;
 }
 
-void Organizma::sistemEkle(){
+void Organizma::sistemEkle(Sistem* yeniSistem){
 
-    Sistem* yeniSistem = new Sistem();
+    
 
     if (ilkSistem == 0)
     {

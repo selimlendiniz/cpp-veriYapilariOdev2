@@ -8,9 +8,9 @@ class Organizma
 private:
     
 public:
-    Organizma(/* args */);
+    Organizma();
     ~Organizma();
-    void sistemEkle();
+    void sistemEkle(Sistem* yeniSistem);
     Sistem* sonSistemGetir();
     Sistem* ilkSistem;
     int sistemSayisi;

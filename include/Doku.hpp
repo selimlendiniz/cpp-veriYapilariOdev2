@@ -19,6 +19,7 @@ public:
     void hucreEkle(int veri);
     void ortancaGuncelle();
     Hucre* sonHucreGetir();
+    ~Doku();
 };
 
 #endif

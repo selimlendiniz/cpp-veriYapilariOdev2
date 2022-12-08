@@ -7,11 +7,10 @@ Sistem::Sistem(){
 }
 
 
-void Sistem::organEkle(){
+void Sistem::organEkle(Organ* yeniOrgan){
 
-    Organ* yeniOrgan = new Organ();
 
-    if (yeniOrgan == 0)
+    if (ilkOrgan == 0)
     {
         ilkOrgan = yeniOrgan;
     }else

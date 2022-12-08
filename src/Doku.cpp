@@ -90,3 +90,10 @@ void Doku::ortancaGuncelle(){
 
 
 }
+
+
+Doku::~Doku()
+{
+   
+    
+}

@@ -11,7 +11,7 @@ class Organ
 public:
     Organ();
     ~Organ();
-    void dokuEkle();
+    void dokuEkle(Doku* yeniDoku);
     Doku* sonDokuGetir();
     Doku* ilkDoku;
     Organ* sonraki;

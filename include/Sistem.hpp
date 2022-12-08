@@ -9,7 +9,7 @@ class Sistem
 public:
     Sistem();
     ~Sistem();
-    void organEkle();
+    void organEkle(Organ* yeniOrgan);
     Organ* sonOrganGetir();
     Organ* ilkOrgan;
     Sistem* sonrakiSistem;

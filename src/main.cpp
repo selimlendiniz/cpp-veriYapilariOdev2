@@ -1,41 +1,75 @@
 #include <iostream>
 
+#include <fstream>
+#include <string>
+#include <sstream>
+
 using namespace std;
 
-#include "Doku.hpp"
+#include "Organizma.hpp"
+
+
 
 
 int main()
 {
-    Doku* selim = new Doku();
 
-    selim->hucreEkle(109);
-    selim->hucreEkle(90);
-    selim->hucreEkle(107);
-    selim->hucreEkle(93);
-    selim->hucreEkle(106);
-    selim->hucreEkle(94);
-    selim->hucreEkle(106);
-    selim->hucreEkle(94);
-    selim->hucreEkle(105);
-    selim->hucreEkle(95);
-    selim->hucreEkle(105);
-    selim->hucreEkle(96);
-    selim->hucreEkle(105);
-    selim->hucreEkle(97);
-    selim->hucreEkle(104);
-    selim->hucreEkle(98);
-    selim->hucreEkle(102);
-    selim->hucreEkle(100);
-    selim->hucreEkle(102);
-    selim->hucreEkle(101);
-    selim->hucreEkle(101);
+    Organizma* organizma = new Organizma();
+    ifstream dosyaOku("veriler.txt");
+    string satir = "";
+    int dokuSayac = 0;
+    int organSayac = 1;
+    int sistemSayac = 1;
+    Doku* doku;
+    Organ* organ = new Organ();;
+    Sistem* sistem = new Sistem();
 
-    selim->ortancaGuncelle();
+    //Dosyayı okuyup yöneticiListsini ve SatirListesini oluşturuyor
+    if (dosyaOku.is_open()) {
+
+        while (getline(dosyaOku, satir)) {
+            
+            stringstream sstream(satir);
+            int temp;
+
+            doku = new Doku();
+            while (sstream >> temp)
+            {
+                doku->hucreEkle(temp);
+            }
+
+            doku->ortancaGuncelle();
+
+            dokuSayac++;
+
+            organ->dokuEkle(doku);
+ 
 
 
+            // 100 organ oldugunda (yani 2000 doku olduğunda) sistem oluşur
+            if (dokuSayac % 20 == 0)
+            {
+                sistem->organEkle(organ);
+                
+                
+            }
 
+            if (dokuSayac % 2000 == 0)
+            {
+                organizma->sistemEkle(sistem);
+                sistem = new Sistem();
+            }
+            
 
-    cout << "selim";
+            
+            if (dokuSayac % 20 == 0)
+            {
+                organ = new Organ();   
+                organSayac++;
+            }  
+        }
+        dosyaOku.close();
+    }
 
+    cout << endl;
 }

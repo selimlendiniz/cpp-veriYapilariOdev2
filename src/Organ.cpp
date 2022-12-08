@@ -7,9 +7,9 @@ Organ::Organ(){
     dokuSayisi = 0;
 }
 
-void Organ::dokuEkle(){
+void Organ::dokuEkle(Doku* yeniDoku){
 
-    Doku* yeniDoku = new Doku();
+    
 
     if (ilkDoku == 0)
     {

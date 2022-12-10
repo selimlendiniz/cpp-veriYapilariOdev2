@@ -95,3 +95,4 @@ int Organ::yukseklik(Doku* aktifDugum)
     }
     return -1;
 }
+

@@ -8,6 +8,53 @@ using namespace std;
 
 #include "Organizma.hpp"
 
+void organizmaYazdir(Organizma* organizma)
+{
+
+    Sistem* sistemGec = organizma->ilkSistem;
+    int sayac = 0;
+
+    while (sistemGec != 0)
+    {
+
+        
+
+        Organ* organGec = sistemGec->ilkOrgan;
+
+
+        while (organGec != 0)
+        {
+
+            if (organGec->dengeliMi)
+            {
+                cout <<  " ";
+            }else
+            {
+                cout << "#";
+            }
+            sayac++;
+            organGec = organGec->sonraki;
+        }
+
+        
+    
+        if (sayac == 100)
+        {
+            cout << endl;
+            sayac = 0;
+        }
+
+
+        
+        
+        
+
+        sistemGec = sistemGec->sonrakiSistem;
+    }
+
+
+}
+
 
 
 
@@ -75,47 +122,12 @@ int main()
         dosyaOku.close();
     }
 
-    Sistem* sistemGec = organizma->ilkSistem;
-    int sayac = 0;
 
-    while (sistemGec != 0)
-    {
-
-        
-
-        Organ* organGec = sistemGec->ilkOrgan;
+    organizmaYazdir(organizma);
 
 
-        while (organGec != 0)
-        {
-
-            if (organGec->dengeliMi)
-            {
-                cout <<  " ";
-            }else
-            {
-                cout << "#";
-            }
-            sayac++;
-            organGec = organGec->sonraki;
-        }
-
-        
     
-        if (sayac == 100)
-        {
-            cout << endl;
-            sayac = 0;
-        }
-
-
-        
-        
-        
-
-        sistemGec = sistemGec->sonrakiSistem;
-    }
-
+    
     cout << "selim";
 
     

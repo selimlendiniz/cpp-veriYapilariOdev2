@@ -21,6 +21,7 @@ public:
     bool dengeKontrolu();
     int yukseklik(Doku* aktifDugum);
     bool dengeKontrolu(Doku* aktif);
+    void mutasyonaUgra();
 
 
 };

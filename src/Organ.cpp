@@ -6,6 +6,7 @@ Organ::Organ(){
     ilkDoku = 0;
     sonraki = 0;
     dokuSayisi = 0;
+    dengeliMi = false;
 }
 
 void Organ::dokuEkle(Doku* yeniDoku){
@@ -54,4 +55,43 @@ void Organ::agacOlustur()
     
 
 
+}
+
+
+
+bool Organ::dengeKontrolu(Doku* aktif)
+{
+    if (aktif)
+    {
+        bool solAktifMi = dengeKontrolu(aktif->sol);
+        bool sagAktifMi = dengeKontrolu(aktif->sag);
+
+        if (solAktifMi && sagAktifMi)
+        {
+            if (abs(yukseklik(aktif->sol)-yukseklik(aktif->sag)) <= 1)
+            {
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+     
+        
+    }
+
+    return true;
+    
+}
+
+int Organ::yukseklik(Doku* aktifDugum) 
+{
+	if(aktifDugum)
+    {
+        aktifDugum->yukseklik= 1+max(   yukseklik(aktifDugum->sol),
+                        yukseklik(aktifDugum->sag));
+        return aktifDugum->yukseklik;
+    }
+    return -1;
 }

@@ -17,6 +17,12 @@ public:
     Doku* ilkDoku;
     Organ* sonraki;
     int dokuSayisi;
+    bool dengeliMi;
+    bool dengeKontrolu();
+    int yukseklik(Doku* aktifDugum);
+    bool dengeKontrolu(Doku* aktif);
+
+
 };
 
 

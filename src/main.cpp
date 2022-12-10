@@ -18,8 +18,8 @@ int main()
     ifstream dosyaOku("veriler.txt");
     string satir = "";
     int dokuSayac = 0;
-    int organSayac = 1;
-    int sistemSayac = 1;
+    int organSayac = 0;
+    int sistemSayac = 0;
     Doku* doku;
     Organ* organ = new Organ();;
     Sistem* sistem = new Sistem();
@@ -50,6 +50,7 @@ int main()
             if (dokuSayac % 20 == 0)
             {
                 organ->agacOlustur();
+                organ->dengeliMi = organ->dengeKontrolu(organ->ilkDoku);
                 sistem->organEkle(organ);
                 
                 
@@ -74,5 +75,50 @@ int main()
         dosyaOku.close();
     }
 
-    cout << endl;
+    Sistem* sistemGec = organizma->ilkSistem;
+    int sayac = 0;
+
+    while (sistemGec != 0)
+    {
+
+        
+
+        Organ* organGec = sistemGec->ilkOrgan;
+
+
+        while (organGec != 0)
+        {
+
+            if (organGec->dengeliMi)
+            {
+                cout <<  " ";
+            }else
+            {
+                cout << "#";
+            }
+            sayac++;
+            organGec = organGec->sonraki;
+        }
+
+        
+    
+        if (sayac == 100)
+        {
+            cout << endl;
+            sayac = 0;
+        }
+
+
+        
+        
+        
+
+        sistemGec = sistemGec->sonrakiSistem;
+    }
+
+    cout << "selim";
+
+    
+
+    
 }

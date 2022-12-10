@@ -19,6 +19,7 @@ public:
 	void preOrder();
 	void postOrder();
 	void inOrder();
+	bool dengeKontrolu();
 	
 private:
 	void levelOrder(Doku* aktif,int level);

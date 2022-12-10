@@ -83,7 +83,6 @@ void Doku::ortancaGuncelle(){
 
     delete radix;
     delete[] sayilar;
-    delete[] siraliSayilar;
     
     
     

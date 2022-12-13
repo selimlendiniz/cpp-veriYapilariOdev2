@@ -46,6 +46,7 @@ void Organ::agacOlustur()
 {
     Doku* gec = ilkDoku;
     IkiliAramaAgaci* agac = new IkiliAramaAgaci();
+    
 
     while (gec != 0)
     {
@@ -54,6 +55,19 @@ void Organ::agacOlustur()
     }
     
 
+
+}
+
+void Organ::agacSifirla()
+{
+    Doku* gec = ilkDoku;
+    while (gec != 0)
+    {
+        gec->sag = 0;
+        gec->sol = 0;
+        
+        gec = gec->sonraki;
+    }
 
 }
 
@@ -96,3 +110,49 @@ int Organ::yukseklik(Doku* aktifDugum)
     return -1;
 }
 
+void Organ::mutasyonaUgra()
+{
+    
+    bool deneme = false;
+    if (ilkDoku->ortanca->dnaSayisi % 50 == 0)
+    {
+        deneme = true;
+        Doku* dokuGec = ilkDoku;
+        while (dokuGec != 0)
+        {
+            Hucre* hucreGec = dokuGec->ilkHucre;
+
+            while (hucreGec != 0)
+            {
+
+                if (hucreGec->dnaSayisi % 2 == 0)
+                {
+                    hucreGec->dnaSayisi = hucreGec->dnaSayisi / 2;
+                }
+
+
+                hucreGec = hucreGec->sonraki;
+            }
+
+            dokuGec->ortancaGuncelle();
+
+
+            dokuGec = dokuGec->sonraki;
+        }
+    }
+
+    if (deneme)
+    {
+        agacSifirla();
+        agacOlustur();
+        dengeliMi = dengeKontrolu(ilkDoku);
+        
+    }
+    
+
+    
+    
+
+    return;
+    
+}

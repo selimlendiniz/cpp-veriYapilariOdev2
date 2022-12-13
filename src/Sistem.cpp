@@ -38,3 +38,16 @@ Organ* Sistem::sonOrganGetir(){
     return gec;
 
 }
+
+
+void Sistem::organlariMustasyonaUgrat()
+{
+    Organ* gec = ilkOrgan;
+    while (gec != 0)
+    {
+        gec->mutasyonaUgra();
+
+        gec = gec->sonraki;
+    }
+    
+}

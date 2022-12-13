@@ -125,8 +125,11 @@ int main()
 
     organizmaYazdir(organizma);
 
-
-    
+    if (cin.get() == '\n') {
+        system("cls");
+        organizma->mutasyonGecir();
+        organizmaYazdir(organizma);
+    }
     
     cout << "selim";
 

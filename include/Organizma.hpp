@@ -14,6 +14,7 @@ public:
     Sistem* sonSistemGetir();
     Sistem* ilkSistem;
     int sistemSayisi;
+    void mutasyonGecir();
 };
 
 

@@ -39,3 +39,16 @@ Sistem* Organizma::sonSistemGetir(){
     return gec;
 
 }
+
+
+void Organizma::mutasyonGecir()
+{
+    Sistem* gec = ilkSistem;
+    while (gec != 0)
+    {
+        gec->organlariMustasyonaUgrat();
+        gec = gec->sonrakiSistem;
+        
+    }
+    
+}

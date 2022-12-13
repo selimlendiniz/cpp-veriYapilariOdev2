@@ -14,6 +14,7 @@ public:
     Organ* ilkOrgan;
     Sistem* sonrakiSistem;
     int organSayisi;
+    void organlariMustasyonaUgrat();
 };
 
 

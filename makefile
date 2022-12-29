@@ -1,4 +1,4 @@
-all:derle bagla
+all:derle bagla calistir
 
 derle:
 	g++ -g -c -I "./include" ./src/Doku.cpp -o ./lib/Doku.o

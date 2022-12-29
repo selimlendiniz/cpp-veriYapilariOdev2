@@ -17,10 +17,7 @@ void organizmaYazdir(Organizma* organizma)
     while (sistemGec != 0)
     {
 
-        
-
         Organ* organGec = sistemGec->ilkOrgan;
-
 
         while (organGec != 0)
         {
@@ -35,19 +32,12 @@ void organizmaYazdir(Organizma* organizma)
             sayac++;
             organGec = organGec->sonraki;
         }
-
-        
     
         if (sayac == 100)
         {
             cout << endl;
             sayac = 0;
-        }
-
-
-        
-        
-        
+        }             
 
         sistemGec = sistemGec->sonrakiSistem;
     }
@@ -90,10 +80,7 @@ int main()
             dokuSayac++;
 
             organ->dokuEkle(doku);
- 
-
-
-            // 100 organ oldugunda (yani 2000 doku olduğunda) sistem oluşur
+            
             if (dokuSayac % 20 == 0)
             {
                 organ->agacOlustur();
